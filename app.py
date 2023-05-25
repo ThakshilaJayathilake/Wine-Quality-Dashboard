@@ -229,15 +229,16 @@ plt.show()
 # external_stylesheets = ['https://fonts.googleapis.com/css2?family=Open+Sans&display=swap']
 
 app = dash.Dash(__name__)
+server = app.server
 # app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 # Define the layout of the dashboard
 app.layout = html.Div(
-#     style={'font-family': 'Open Sans'}, 
+    style={'background-color': 'lightblue'}, 
     className = 'container',
     children=[
     
-    html.H1('CO544-2023 Lab 3: Wine Quality Prediction', style={'text-align': 'center'}),
+    html.H1('CO544-2023 Lab 3: Wine Quality Prediction E/18/156', style={'text-align': 'center'}),
     
     html.Div([
         html.H2('Exploratory Data Analysis'),
@@ -263,32 +264,32 @@ app.layout = html.Div(
     # Wine quality prediction based on input feature values
     html.H3("Wine Quality Prediction"),
     html.Div([
-        html.Label("Fixed Acidity", style={'margin-right': '50px'}),
+        html.Label("Fixed Acidity", style={'margin-right': '100px'}),
         dcc.Input(id='fixed_acidity', type='number', required=True, style={'margin-right': '50px'}),    
         html.Label("Volatile Acidity", style={'margin-right': '50px'}),
         dcc.Input(id='volatile_acidity', type='number', required=True, style={'margin-right': '50px'}), 
-        html.Label("Citric Acid", style={'margin-right': '50px'}),
+        html.Label("Citric Acid", style={'margin-right': '100px'}),
         dcc.Input(id='citric_acid', type='number', required=True, style={'margin-right': '50px', 'margin-bottom': '10px'}),
         html.Br(),
         
-        html.Label("Residual Sugar", style={'margin-right': '50px'}),
+        html.Label("Residual Sugar", style={'margin-right': '90px'}),
         dcc.Input(id='residual_sugar', type='number', required=True, style={'margin-right': '50px'}),  
-        html.Label("Chlorides", style={'margin-right': '50px'}),
+        html.Label("Chlorides", style={'margin-right': '80px'}),
         dcc.Input(id='chlorides', type='number', required=True, style={'margin-right': '50px'}), 
         html.Label("Free Sulfur Dioxide", style={'margin-right': '50px'}),
         dcc.Input(id='free_sulfur_dioxide', type='number', required=True, style={'margin-right': '50px', 'margin-bottom': '10px'}),
         html.Br(),
         
         html.Label("Total Sulfur Dioxide", style={'margin-right': '50px'}),
-        dcc.Input(id='total_sulfur_dioxide', type='number', required=True, style={'margin-right': '50px'}),
+        dcc.Input(id='total_sulfur_dioxide', type='number', required=True, style={'margin-right': '100px'}),
         html.Label("Density", style={'margin-right': '50px'}),
         dcc.Input(id='density', type='number', required=True, style={'margin-right': '50px'}),
-        html.Label("pH", style={'margin-right': '50px'}),
+        html.Label("pH", style={'margin-right': '150px'}),
         dcc.Input(id='ph', type='number', required=True, style={'margin-right': '50px', 'margin-bottom': '10px'}),
         html.Br(),
         
-        html.Label("Sulphates", style={'margin-right': '50px'}),
-        dcc.Input(id='sulphates', type='number', required=True, style={'margin-right': '50px'}),
+        html.Label("Sulphates", style={'margin-right': '115px'}),
+        dcc.Input(id='sulphates', type='number', required=True, style={'margin-right': '100px'}),
         html.Label("Alcohol", style={'margin-right': '50px'}),
         dcc.Input(id='alcohol', type='number', required=True, style={'margin-right': '50px', 'margin-bottom': '10px'}),
         html.Br(),
@@ -296,7 +297,7 @@ app.layout = html.Div(
 
     html.Div([
         html.Br(),
-        html.Button('Predict', id='predict-button', n_clicks=0, style={'font-size': '14px', 'color': 'blue', 'font-weight': 'bold'}),
+        html.Button('Predict', id='predict-button', n_clicks=0, style={'font-size': '14px', 'color': 'blue', 'font-weight': 'bold', 'align-items': 'center'}),
     ]),
 
     html.Div([
